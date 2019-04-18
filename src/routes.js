@@ -11,6 +11,7 @@ import Receptionist from './components/Receptionist/Receptionist';
 import Patients from './components/Receptionist/Patients';
 import Signup from './components/Receptionist/Signup';
 import Doctor from './components/Doctor/Doctor';
+import HomePatient from './components/Patient/HomePatient';
 
 
 const Routes = () => (
@@ -20,7 +21,9 @@ const Routes = () => (
           <Route path="/home" component={Home}/>
           <Route path="/login" component={Login}/>
           <Route path="/signup" component={Signup}/>
-          <Route path="/patient" component={Patient}/>
+          <Route path="/patients" component={Patient}/>
+          <Route path="/patient" component={HomePatient}/>
+         
           <Route path="/admin" component={Admin}/>
           <Route path="/doctor" component={Doctor}/>
           <Route path="/receptionist" component={Receptionist}/>

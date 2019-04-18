@@ -7,7 +7,7 @@ const Receptionist = () => {
       <Sidebar/>
       <div className="row" id="Body">
         <div className="medium-12 columns">
-          <a href="#" onClick={this.logout} className="logout">Logout</a>
+          <h1>Lễ tân</h1>
         </div>
       </div>
     </div>

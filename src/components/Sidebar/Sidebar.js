@@ -170,9 +170,11 @@ class Admin extends React.Component {
       anchorEl: null,
       mobileMoreAnchorEl: null,
       redirectToReferrer: false,
+      redirectToPatient: false,
       listSidebar: ["Home", "Bác sĩ"],
     };
     this.logout = this.logout.bind(this);
+    this.showPatient = this.showPatient.bind(this);
   }
 
   handleListSidebar = list => {
@@ -204,7 +206,9 @@ class Admin extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
-
+  showPatient(){
+    this.setState({redirectToPatient: true});
+  };
   logout(){
     sessionStorage.setItem("userData",'');
     sessionStorage.setItem("userRole",'');
@@ -213,8 +217,12 @@ class Admin extends React.Component {
   };
 
   render() {
+
     if (this.state.redirectToReferrer) {
       return (<Redirect to={'/login'}/>)
+    }
+    if (this.state.redirectToPatient) {
+      return (<Redirect to={'/patients'}/>)
     }
 
     const { anchorEl, mobileMoreAnchorEl } = this.state;
@@ -230,7 +238,7 @@ class Admin extends React.Component {
 
 
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
+        <MenuItem onClick={this.showPatient}>Patient</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
         <MenuItem
 

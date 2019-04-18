@@ -104,7 +104,7 @@ class Login extends Component {
      if (this.state.redirectToReferrer) {
        switch (sessionStorage.getItem('userRole')) {
          case "1":
-           return (<Redirect to={'/patient'}/>)
+           return (<Redirect to={'/patients'}/>)
            break;
          case "2":
            return (<Redirect to={'/doctor'}/>)
