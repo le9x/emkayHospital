@@ -50,6 +50,7 @@ class Login extends Component {
         if (!rs.errCode) {
         sessionStorage.setItem('userData',rs.token);
         sessionStorage.setItem('userRole',rs.role);
+        
         scope.setState({redirectToReferrer: true});
 
         console.log(scope.state);
